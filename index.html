@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>zixeddev | portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo-link">zixed<span>dev</span></a>
+            <nav>
+                <a href="#work" class="nav-link">my work</a>
+                <a href="#services" class="nav-link">what i can do</a>
+                <a href="#contact" class="nav-link">contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <span class="hero-badge">available for freelance work</span>
+            <h1 class="hero-title">zixeddev</h1>
+            <p class="hero-role">web developer</p>
+            <p class="hero-subtitle">crafting clean, high-performance, ultra-sleek websites designed to give local businesses a professional edge online.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary nav-link">start your project</a>
+                <a href="#work" class="btn btn-secondary nav-link">my work</a>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="section-header">
+                <span class="section-tag">portfolio</span>
+                <h2 class="section-title">my work</h2>
+            </div>
+            <div class="empty-state">
+                <p class="empty-state-text">currently building custom projects for local businesses, live sites will be featured here soon</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-header">
+                <span class="section-tag">skills & capabilities</span>
+                <h2 class="section-title">what i can do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">👨‍💻</div>
+                        <h3 class="service-title">html & css structure</h3>
+                    </div>
+                    <p class="service-desc">i build clean, html layouts along with css styling to create a website that loads fast and looks incredibly polished</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">⚡</div>
+                        <h3 class="service-title">functional javascript</h3>
+                    </div>
+                    <p class="service-desc">i use javascript to handle specific interactive tasks like dynamic elements, custom menus, and functional logic</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">✅</div>
+                        <h3 class="service-title">straightforward design</h3>
+                    </div>
+                    <p class="service-desc">i focus on what actually works. i don't make over-engineered websites with unnecessary tech; i build professional, modern, dark-themed sites designed to convert.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container">
+                <h2 class="contact-title">let's build your website</h2>
+                <p class="contact-desc">drop me an email to talk about your project and let me do the work</p>
+                <a href="mailto:zixeddev.business@gmail.com" class="contact-btn">zixeddev.business@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 zixeddev. all rights reserved.</p>
+    </footer>
+
+    <script>
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('logo-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
